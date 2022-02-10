@@ -8,14 +8,16 @@ export default function Login() {
     formState: { errors },
   } = useForm();
 
-  const handleError = (errors) => { console.log(errors)};
+  const handleError = (errors) => {
+    
+  };
 
   const onSubmit = (data) => {
     console.log(data);
   };
 
   const registerOptions = {
-    name: { required: "Name is required" },
+    username: { required: "User is required" },
     password: {
       required: "Password is required",
       minLength: {
@@ -27,11 +29,11 @@ export default function Login() {
 
   return (
     <div className="h-screen bg-slate-800 flex justify-center items-center w-full">
-      <form onSubmit={handleSubmit(onSubmit,handleError)}>
+      <form onSubmit={handleSubmit(onSubmit, handleError)}>
         <div className="bg-white px-10 py-8 rounded-xl w-screen shadow-md max-w-sm">
           <div className="space-y-4">
             <h1 className="text-center text-2xl font-semibold text-gray-600">
-              Log in
+              Welcome
             </h1>
             <div>
               <label
@@ -42,14 +44,13 @@ export default function Login() {
               </label>
               <input
                 type="text"
-                name="user"
-                className="user"
-                ref=
-                
+                name="username"
+                className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
+                {...register("username", registerOptions.username)}
               />
-              <p className="text-danger">
-                {errors?.name && errors.name.message}
-              </p>
+              <small className="text-red-600">
+                {errors?.username && errors.username.message}
+              </small>
             </div>
             <div>
               <label
@@ -61,16 +62,22 @@ export default function Login() {
               <input
                 type="text"
                 className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
-                {...register("password", { required: true })}
+                {...register("password", registerOptions.password)}
               />
+              <small className="text-red-600">
+                {errors?.password && errors.password.message}
+              </small>
             </div>
           </div>
           <button
             type="subimit"
             className="mt-4 w-full bg-gradient-to-tr from-blue-600 to-indigo-600 text-indigo-100 py-2 rounded-md text-lg tracking-wide"
           >
-            Login
+            Log in
           </button>
+          <div className="pt-5 text-center text-blue-600">
+            <p>Register</p>
+          </div>
         </div>
       </form>
     </div>
