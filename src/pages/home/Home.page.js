@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import Nav from "../../components/template/nav/Nav.component";
 
 class Home extends Component {
   render() {
     return <div>
-        This is Home
+        <Nav></Nav>
     </div>
   }
 }

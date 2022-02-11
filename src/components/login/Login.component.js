@@ -45,7 +45,7 @@ export default function Login() {
               <input
                 type="text"
                 name="username"
-                className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
+                className="bg-indigo-50 border border-gray-200 px-4 py-2 outline-none rounded-md w-full"
                 {...register("username", registerOptions.username)}
               />
               <small className="text-red-600">
@@ -61,7 +61,7 @@ export default function Login() {
               </label>
               <input
                 type="text"
-                className="bg-indigo-50 px-4 py-2 outline-none rounded-md w-full"
+                className="bg-indigo-50 border border-gray-200 px-4 py-2 outline-none rounded-md w-full"
                 {...register("password", registerOptions.password)}
               />
               <small className="text-red-600">

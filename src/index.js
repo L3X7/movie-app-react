@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import 'flowbite';
 import App from "./App";
 import Home from "./pages/home/Home.page";
 import Movie from "./pages/movie/Movie.page";
