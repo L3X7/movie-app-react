@@ -48,9 +48,9 @@ export default function Login() {
                 className="bg-indigo-50 border border-gray-200 px-4 py-2 outline-none rounded-md w-full"
                 {...register("username", registerOptions.username)}
               />
-              <small className="text-red-600">
-                {errors?.username && errors.username.message}
-              </small>
+              <p className="mt-2 text-sm text-red-600 dark:text-red-500">
+                <span className="font-medium">{errors?.username && errors.username.message}</span>
+              </p>
             </div>
             <div>
               <label
@@ -64,9 +64,9 @@ export default function Login() {
                 className="bg-indigo-50 border border-gray-200 px-4 py-2 outline-none rounded-md w-full"
                 {...register("password", registerOptions.password)}
               />
-              <small className="text-red-600">
-                {errors?.password && errors.password.message}
-              </small>
+              <p className="mt-2 text-sm text-red-600 dark:text-red-500">
+              <span className="font-medium">{errors?.password && errors.password.message}</span>
+              </p>
             </div>
           </div>
           <button
